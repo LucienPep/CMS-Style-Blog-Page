@@ -1011,11 +1011,11 @@ a:hover {
 
 .btn.btn-primary {
   background-color: #220d08;
-  color: #d9e9e8;
+  color: #ffffff;
 }
 
 .btn.btn-primary:hover {
-  background-color: #57779a;
+  background-color: #46180c;
 }
 
 .btn.btn-danger {

@@ -1,6 +1,5 @@
 <!-- Loop over each object in the projects array -->
 {{#each projects as |project| }}
-<a href="/project/6">
 <div class="borderMD row mb-4 project">
   <div class="col-md-12">
     <h2>
@@ -8,10 +7,9 @@
     </h2>
     <p>
     {{project.input}}
-    
     </p>
     <p>Posted by {{project.user.name}} on {{format_date project.date_created}}</p>
+    <button class="borderBase btn btn-primary">Add Comment</button>
   </div>
 </div>
- </a>
 {{/each}}

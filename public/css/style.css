@@ -58,3 +58,7 @@ header, .project:not(:last-child) {
   color: black;
   text-decoration: none;
 }
+
+.borderBase {
+  margin-bottom:  10px;
+}
