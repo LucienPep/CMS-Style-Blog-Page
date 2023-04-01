@@ -9,6 +9,7 @@ html {
   line-height: 1.15;
   /* 1 */
   -webkit-text-size-adjust: 100%;
+  background-color: #e7c2aa;
   /* 2 */
 }
 
@@ -420,12 +421,12 @@ button {
 }
 
 a {
-  color: #1b89bc;
+  color: #b75c3d;
   text-decoration: none;
 }
 
 a:hover {
-  color: #065b83;
+  color: #df6841;
   text-decoration: underline;
 }
 
@@ -1009,7 +1010,7 @@ a:hover {
 }
 
 .btn.btn-primary {
-  background-color: #2d3e50;
+  background-color: #220d08;
   color: #d9e9e8;
 }
 
@@ -1018,7 +1019,7 @@ a:hover {
 }
 
 .btn.btn-danger {
-  background-color: #e64c66;
+  background-color: #8a0c21;
   color: #ffffff;
 }
 
@@ -1143,10 +1144,10 @@ form .form-input {
   width: 100%;
   padding: 0.75rem;
   color: #1a1a1a;
-  background-color: #ffffff;
+  background-color: #daaf93;
   margin: 0.625rem 0;
   font-size: 1.2rem;
-  border: 1px solid #484848;
+  border: 1px solid #000000;
   border-radius: 0.3rem;
 }
 
@@ -1450,8 +1451,6 @@ form [type='radio'] {
     max-width: 41.66667%;
   }
   .col-md-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
   }
   .col-md-7 {
     flex: 0 0 58.33333%;
