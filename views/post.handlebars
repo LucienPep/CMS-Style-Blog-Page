@@ -1,9 +1,11 @@
-<div class="text-center">
+<div class="text-center post-div">
   <h2>{{title}}</h2>
   <p>{{content}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
+  <div>
     <button class="btn btn-primary">Update</button>
-    <button class="btn btn-danger" data-id="{{post.id}}">Delete</button>
-  </p>
+    <button class="btn btn-danger" data-id="{{id}}">Delete</button>
+  </div>
 </div>
+
+<script src="./js/profile.js"></script>

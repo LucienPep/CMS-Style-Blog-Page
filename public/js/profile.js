@@ -5,7 +5,7 @@ const newFormHandler = async (event) => {
   const content = document.querySelector('#post-content').value.trim();
 
   if (title && content) {
-    const response = await fetch(`/api/projects`, {
+    const response = await fetch(`/api/post`, {
       method: 'POST',
       body: JSON.stringify({ title, content }),
       headers: {
@@ -32,7 +32,7 @@ const delButtonHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to delete project');
+      alert('Failed to delete post');
     }
   }
 };
@@ -42,5 +42,5 @@ document
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.post-list')
+  .querySelector('.post-div')
   .addEventListener('click', delButtonHandler);

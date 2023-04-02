@@ -1,14 +1,13 @@
-<!-- Loop over each object in the projects array -->
-{{#each projects as |project| }}
-<div class="borderMD row mb-4 project">
+{{#each posts as |post| }}
+<div class="borderMD row mb-4 post">
   <div class="col-md-12">
     <h2>
-      {{project.name}}
+      {{post.title}}
     </h2>
     <p>
-    {{project.input}}
+    {{post.content}}
     </p>
-    <p>Posted by {{project.user.name}} on {{format_date project.date_created}}</p>
+    <p>Posted by {{post.user.name}} on {{format_date post.date_created}}</p>
     <button class="borderBase btn btn-primary">Add Comment</button>
   </div>
 </div>
