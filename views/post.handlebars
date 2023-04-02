@@ -3,9 +3,9 @@
   <p>{{content}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
   <div>
-    <button class="btn btn-primary">Update</button>
+    <button class="btn btn-primary"><a href="/update/{{id}}">Update</a></button>
     <button class="btn btn-danger" data-id="{{id}}">Delete</button>
   </div>
 </div>
 
-<script src="./js/profile.js"></script>
+<script src="/js/profile.js"></script>

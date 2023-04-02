@@ -21,6 +21,31 @@ const newFormHandler = async (event) => {
   }
 };
 
+const updateHandler = async (event) => {
+ event.preventDefault();
+
+ console.log('crackGROMIT!!')
+
+ const title = document.querySelector('#post-title').value.trim();
+ const content = document.querySelector('#post-content').value.trim();
+
+ if (title && content) {
+   const response = await fetch(`/api/post/update/${id}`, {
+     method: 'PUT',
+     body: JSON.stringify({ title, content }),
+     headers: {
+       'Content-Type': 'application/json',
+     },
+   });
+
+   if (response.ok) {
+     document.location.replace('/profile');
+   } else {
+     alert('Failed to create post');
+   }
+ }
+};
+
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -44,3 +69,7 @@ document
 document
   .querySelector('.post-div')
   .addEventListener('click', delButtonHandler);
+
+document
+  .querySelector('.update-post-form')
+  .addEventListener('submit', updateHandler);
