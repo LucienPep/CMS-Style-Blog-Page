@@ -25,7 +25,6 @@ const newFormHandler = async (event) => {
 //Take input data from handlebars and send it with POST method to create a new comment attached to the comment ID
 const commentHandler = async (event) => {
   event.preventDefault();
-
   
 
   const id = event.submitter.form[1].id;

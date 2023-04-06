@@ -59,7 +59,7 @@ router.put('/update/:id', async (req, res) => {
 
 //POST method to create a new comment on a post by id
 router.post('/comment/:id', withApiAuth, async (req, res) => {
-  const userData = await User.findByPk(req.params.id, {
+  const userData = await User.findByPk(req.session.user_id, {
   });
 
   const user = userData.get({ plain: true });
