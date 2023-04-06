@@ -1,3 +1,4 @@
+//listen to logout button and send POST method to log user out if clicked 
 const logout = async () => {
   const response = await fetch('/api/users/logout', {
     method: 'POST',

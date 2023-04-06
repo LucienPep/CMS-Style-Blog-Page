@@ -1,3 +1,4 @@
+//Get values from handlebars file and send a POST method with data to create a new post in the database
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -21,11 +22,56 @@ const newFormHandler = async (event) => {
   }
 };
 
+//Take input data from handlebars and send it with POST method to create a new comment attached to the comment ID
+const commentHandler = async (event) => {
+  event.preventDefault();
+
+  
+
+  const id = event.submitter.form[1].id;
+  const content = document.querySelector('#post-comment').value.trim();
+
+  if (content) {
+    const response = await fetch(`/api/post/comment/${id}`, {
+      method: 'POST',
+      body: JSON.stringify({ content }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      document.location.replace('/comment/' + `${id}`);
+    } else {
+      alert('Failed to create comment');
+    }
+  }
+};
+
+//find data id in event.target that is the post id and send DELETE method with this id
+const delButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    
+    const id = event.target.getAttribute('data-id');
+    console.log(id)
+
+    const response = await fetch(`/api/post/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to delete post');
+    }
+  }
+};
+
+//find post by id and send PUT method to replace the data with the new data inputted via handlebars
 const updateHandler = async (event) => {
  event.preventDefault();
 
- console.log('crackGROMIT!!')
-
+ const id = event.submitter.form[2].id;
  const title = document.querySelector('#post-title').value.trim();
  const content = document.querySelector('#post-content').value.trim();
 
@@ -46,30 +92,27 @@ const updateHandler = async (event) => {
  }
 };
 
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+//Event listeners from handlebars files for each function and method
+const newPostForm = document
+  .querySelector('.new-post-form');
+if(newPostForm){ 
+  newPostForm.addEventListener('submit', newFormHandler);
+}
 
-    const response = await fetch(`/api/post/${id}`, {
-      method: 'DELETE',
-    });
+const updatePostForm = document
+  .querySelector('.update-post-form');
+if(updatePostForm){
+  updatePostForm.addEventListener('submit', updateHandler);
+}
 
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to delete post');
-    }
-  }
-};
+const commentPostForm = document
+  .querySelector('.comment-post-form');
+if(commentPostForm){
+  commentPostForm.addEventListener('submit', commentHandler);
+}
 
-document
-  .querySelector('.new-post-form')
-  .addEventListener('submit', newFormHandler);
-
-document
-  .querySelector('.post-div')
-  .addEventListener('click', delButtonHandler);
-
-document
-  .querySelector('.update-post-form')
-  .addEventListener('submit', updateHandler);
+const delPostHandler = document
+  .querySelector('.btn-danger');
+if(delPostHandler){
+  delPostHandler.addEventListener('click', delButtonHandler);
+}

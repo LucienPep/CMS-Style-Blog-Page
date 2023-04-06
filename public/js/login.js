@@ -1,3 +1,4 @@
+// gets input data for sign in from handlebars views and send them in a POST request to  be processed 
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -19,6 +20,7 @@ const loginFormHandler = async (event) => {
   }
 };
 
+// gets input data for sign up from handlebars views and send them in a POST request to create a new user
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
@@ -40,6 +42,8 @@ const signupFormHandler = async (event) => {
   }
 };
 
+
+//listener for handlebars pages to submit login or sign up data
 document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);

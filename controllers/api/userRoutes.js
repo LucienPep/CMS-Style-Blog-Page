@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+//POST method to create a new user
 router.post('/', async (req, res) => {
-  console.log('signup')
   try {
     const userData = await User.create(req.body);
 
@@ -17,8 +17,8 @@ router.post('/', async (req, res) => {
   }
 });
 
+//POST method to login to a known user if user credentials to not match a 400 error will be passed.
 router.post('/login', async (req, res) => {
-  console.log('login')
   try {
     const userData = await User.findOne({ where: { name: req.body.name } });
 
@@ -50,6 +50,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+//POST method to logout a known user by destroying the logged in session cookie
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
