@@ -65,7 +65,7 @@ I started by creating the models and then moved to creating a basic layout for m
 
 ### Link To Deployed Site
 
-Link For Deployed Site<br>[Week-14-Heroku-Deployment]()
+Link For Deployed Site<br>[Week-14-Heroku-Deployment](https://block-blog.herokuapp.com/)
 
 ### Screenshot
 
@@ -77,7 +77,7 @@ For this application no dependencies need to be installed as a user on the deplo
 
 ### Usage
 
-This project is deployed using Heroku [here]().
+This project is deployed using Heroku [here](https://block-blog.herokuapp.com/).
 
 You can create an account and add blog posts to your account and comment on posts created by other users.
 
